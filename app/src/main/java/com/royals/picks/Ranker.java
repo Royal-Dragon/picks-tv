@@ -16,7 +16,7 @@ final class Ranker {
      * @param nowMillis  the current time, so the choice can change by hour or by day
      */
     static List<Tmdb.Title> choose(List<Tmdb.Title> candidates, int count, long nowMillis) {
-        // TODO(human): replace this placeholder with your own taste. It just takes the most popular titles.
+        // get random list based on imdb ratings and that are available on netflix or jio hotstar
         List<Tmdb.Title> sorted = new ArrayList<>(candidates);
         Collections.sort(sorted, new Comparator<Tmdb.Title>() {
             @Override public int compare(Tmdb.Title a, Tmdb.Title b) {

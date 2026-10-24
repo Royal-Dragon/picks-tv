@@ -59,14 +59,13 @@ final class Tmdb {
     }
 
     /**
-     * TMDB provider id -> {TV app package, service name}. These ids are from memory, not checked against TMDB:
-     * confirm them once with GET /watch/providers/movie?watch_region=IN and fix any that are wrong.
+     * TMDB provider id -> {TV app package, service name}. Verified against /watch/providers/movie?watch_region=IN:
      */
     static final Map<Integer, String[]> SERVICES = new LinkedHashMap<>();
     static {
         SERVICES.put(8, new String[]{"com.netflix.ninja", "Netflix"});
         SERVICES.put(119, new String[]{"com.amazon.amazonvideo.livingroom", "Prime Video"});
-        SERVICES.put(122, new String[]{"in.startv.hotstar", "JioHotstar"});
+        SERVICES.put(2336, new String[]{"in.startv.hotstar", "JioHotstar"});
     }
 
     private Tmdb() {}

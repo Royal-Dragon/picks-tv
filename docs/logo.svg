@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 149" width="320" height="149" role="img" aria-label="Picks">
+  <rect width="320" height="149" rx="18" fill="#0d1117"/>
+  <rect x="38" y="26" width="52" height="78" rx="7" fill="#1a212b" stroke="#303a48" stroke-width="2" opacity=".6"/>
+  <rect x="70" y="20" width="56" height="84" rx="7" fill="#1a212b" stroke="#e8a33d" stroke-width="2.5"/>
+  <path d="M90 52v24l20-12z" fill="#e8a33d"/>
+  <text x="146" y="82" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="38" font-weight="700" fill="#f6ecd9">picks</text>
+  <text x="38" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="2" fill="#7d8896">TONIGHT ON YOUR APPS</text>
+</svg>
