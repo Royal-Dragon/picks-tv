@@ -21,7 +21,7 @@
   </p>
 </div>
 
-<img src="docs/banner.svg" alt="Titles popular on TMDB are filtered to your region and your installed apps, then shown as a shelf of posters" width="100%" />
+<img src="docs/banner.svg" alt="A TV showing a shelf of posters with the middle one raised, under the words: What to watch tonight, only from the apps already on your TV" width="100%" />
 
 Every streaming app has its own home screen, and none of them know what the others have. Picks asks
 [TMDB](https://www.themoviedb.org) what is popular on the services you use in your country, throws away anything

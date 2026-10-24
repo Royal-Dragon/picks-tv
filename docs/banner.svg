@@ -1,46 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="TMDB titles are filtered to the streaming apps installed on your TV and shown as a row of posters">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="A TV showing a shelf of movie and show posters, with the middle one raised and its title above">
   <defs>
-    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#2a3340"/></pattern>
-    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e8a33d" stop-opacity="0"/><stop offset=".5" stop-color="#e8a33d" stop-opacity=".16"/><stop offset="1" stop-color="#e8a33d" stop-opacity="0"/></linearGradient>
-    <g id="poster">
-      <rect width="104" height="156" rx="10" fill="#1a212b" stroke="#303a48" stroke-width="2"/>
-      <rect x="12" y="116" width="62" height="6" rx="3" fill="#303a48"/><rect x="12" y="128" width="40" height="6" rx="3" fill="#303a48"/>
-    </g>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b1b4a"/>
+      <stop offset=".55" stop-color="#8a3a4f"/>
+      <stop offset="1" stop-color="#e8a33d"/>
+    </linearGradient>
+    <radialGradient id="screenGlow" cx=".5" cy=".6" r=".7">
+      <stop offset="0" stop-color="#f6c978" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#f6c978" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1630"/>
+      <stop offset="1" stop-color="#0d0b18"/>
+    </linearGradient>
+    <linearGradient id="pA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d7bd9"/><stop offset="1" stop-color="#1b2f6b"/></linearGradient>
+    <linearGradient id="pB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8a33d"/><stop offset="1" stop-color="#9a3d1d"/></linearGradient>
+    <linearGradient id="pC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3fb7a6"/><stop offset="1" stop-color="#14524b"/></linearGradient>
+    <linearGradient id="pD" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c0407a"/><stop offset="1" stop-color="#4a1a45"/></linearGradient>
+    <linearGradient id="pE" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8f6fe0"/><stop offset="1" stop-color="#2e1f6b"/></linearGradient>
+    <clipPath id="screenClip"><rect width="660" height="240" rx="14"/></clipPath>
+    <g id="lines"><rect x="10" y="0" width="54" height="6" rx="3" fill="#ffffff" opacity=".55"/><rect x="10" y="12" width="34" height="6" rx="3" fill="#ffffff" opacity=".35"/></g>
   </defs>
   <style>
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", monospace; }
-    .lbl { font-size: 13px; letter-spacing: 3px; fill: #7d8896; }
-    .ttl { font-size: 14px; font-weight: 700; fill: #f6ecd9; }
-    .trace { fill: none; stroke: #e8a33d; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .font { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
   </style>
-  <rect width="1280" height="400" fill="#0d1117"/>
-  <rect width="1280" height="400" fill="url(#dots)"/>
-  <rect y="120" width="1280" height="160" fill="url(#glow)"/>
 
-  <!-- LEFT: everything TMDB says is popular -->
-  <g opacity=".9">
-    <use href="#poster" transform="translate(70 90) rotate(-8 52 78)" opacity=".5"/>
-    <use href="#poster" transform="translate(170 70) rotate(5 52 78)" opacity=".6"/>
-    <use href="#poster" transform="translate(120 190) rotate(-3 52 78)" opacity=".75"/>
-    <use href="#poster" transform="translate(240 170) rotate(9 52 78)" opacity=".9"/>
+  <!-- sunset room -->
+  <rect width="1280" height="400" fill="url(#sky)"/>
+  <circle cx="1090" cy="300" r="120" fill="#f6c978" opacity=".28"/>
+  <circle cx="1090" cy="300" r="64" fill="#f6c978" opacity=".35"/>
+  <rect y="338" width="1280" height="62" fill="#1a1226" opacity=".85"/>
+
+  <!-- left: the idea in words -->
+  <g class="font">
+    <text x="70" y="150" font-size="52" font-weight="700" fill="#fff7e6">What to watch</text>
+    <text x="70" y="208" font-size="52" font-weight="700" fill="#ffd98a">tonight.</text>
+    <text x="70" y="258" font-size="20" fill="#f3dfe6">Only from the apps already on your TV.</text>
   </g>
-  <text x="70" y="368" class="mono lbl">TMDB</text>
 
-  <!-- MIDDLE: the filter -->
-  <path class="trace" d="M380 200 H560"/>
-  <path class="trace" d="M548 188 l14 12 -14 12"/>
-  <rect x="580" y="140" width="190" height="120" rx="14" fill="#161c26" stroke="#e8a33d" stroke-width="2"/>
-  <text x="675" y="188" text-anchor="middle" class="mono ttl">your region</text>
-  <text x="675" y="214" text-anchor="middle" class="mono ttl">+ your apps</text>
-  <text x="675" y="240" text-anchor="middle" class="mono" font-size="12" fill="#7d8896">Netflix · JioHotstar</text>
-  <path class="trace" d="M790 200 H920"/>
-  <path class="trace" d="M908 188 l14 12 -14 12"/>
-
-  <!-- RIGHT: the shelf of posters -->
-  <g>
-    <use href="#poster" transform="translate(950 120)" opacity=".7"/>
-    <use href="#poster" transform="translate(1062 108) scale(1.08)"/>
-    <use href="#poster" transform="translate(1186 120)" opacity=".7"/>
+  <!-- the TV -->
+  <g transform="translate(560 54)">
+    <rect x="-8" y="-8" width="676" height="256" rx="22" fill="#0a0812"/>
+    <rect width="660" height="240" rx="14" fill="url(#screen)"/>
+    <rect width="660" height="240" rx="14" fill="url(#screenGlow)"/>
+    <!-- focused title -->
+    <g class="font">
+      <text x="34" y="52" font-size="26" font-weight="700" fill="#ffffff">Tonight's pick</text>
+      <text x="34" y="76" font-size="13" fill="#b9b2cf">Netflix  ·  2024  ·  Show  ·  8.1</text>
+    </g>
+    <!-- poster shelf (clipped to the screen) -->
+    <g clip-path="url(#screenClip)"><g transform="translate(34 98)">
+      <rect width="92" height="124" rx="8" fill="url(#pA)"/><g transform="translate(0 96)"><use href="#lines"/></g>
+      <g transform="translate(108 0)"><rect width="92" height="124" rx="8" fill="url(#pC)"/><g transform="translate(0 96)"><use href="#lines"/></g></g>
+      <g transform="translate(214 -16) scale(1.12)">
+        <rect x="-3" y="-3" width="98" height="130" rx="10" fill="none" stroke="#ffd98a" stroke-width="3"/>
+        <rect width="92" height="124" rx="8" fill="url(#pB)"/><g transform="translate(0 96)"><use href="#lines"/></g>
+      </g>
+      <g transform="translate(330 0)"><rect width="92" height="124" rx="8" fill="url(#pD)"/><g transform="translate(0 96)"><use href="#lines"/></g></g>
+      <g transform="translate(438 0)"><rect width="92" height="124" rx="8" fill="url(#pE)"/><g transform="translate(0 96)"><use href="#lines"/></g></g>
+      <g transform="translate(546 0)" opacity=".6"><rect width="92" height="124" rx="8" fill="url(#pA)"/></g>
+    </g></g>
+    <!-- stand -->
+    <rect x="290" y="248" width="80" height="14" rx="4" fill="#0a0812"/>
+    <rect x="230" y="260" width="200" height="8" rx="4" fill="#0a0812"/>
   </g>
-  <text x="950" y="368" class="mono lbl">PICKS</text>
 </svg>
