@@ -1,0 +1,5 @@
+# Copy to tmdb.properties (git-ignored) and fill in. Free key: themoviedb.org -> Settings -> API.
+# Use the "API Read Access Token" (the long one), not the short API key.
+tmdb_token=
+# Two-letter country: which titles are on which streaming service.
+tmdb_region=IN

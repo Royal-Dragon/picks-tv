@@ -1,0 +1,42 @@
+plugins {
+    id 'com.android.application'
+}
+
+// The TMDB token is read from tmdb.properties (git-ignored) and compiled into BuildConfig.
+def tmdb = new Properties()
+def tmdbFile = rootProject.file('tmdb.properties')
+if (tmdbFile.exists()) tmdbFile.withInputStream { tmdb.load(it) }
+
+android {
+    namespace 'com.royals.picks'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.royals.picks'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '0.1'
+        buildConfigField 'String', 'TMDB_TOKEN', '"' + (tmdb.getProperty('tmdb_token') ?: '').trim() + '"'
+        buildConfigField 'String', 'REGION', '"' + (tmdb.getProperty('tmdb_region') ?: 'IN').trim() + '"'
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+            // Sideloaded over ADB: signed with the debug key.
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
